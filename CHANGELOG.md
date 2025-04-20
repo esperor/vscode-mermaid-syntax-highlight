@@ -1,5 +1,9 @@
 # Change Log
 
+## [v1.7.2]
+
+- Add support for a dotted link syntax variation without leading dash
+
 ## [v1.7.0]
 
 - Add architecture diagram support
