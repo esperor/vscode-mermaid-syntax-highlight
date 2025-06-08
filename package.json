@@ -6,14 +6,18 @@
 	"version": "1.7.4",
 	"publisher": "bpruitt-goddard",
 	"license": "MIT",
-	"type": "module",
+	"type": "commonjs",
 	"engines": {
-		"vscode": "^1.19.0",
+		"vscode": "^1.100.0",
 		"node": ">=22.0.0"
 	},
 	"categories": [
 		"Other"
 	],
+	"activationEvents": [
+		"onLanguage:markdown"
+	],
+	"main": "./out/extension.js",
 	"contributes": {
 		"languages": [
 			{
@@ -76,9 +80,12 @@
 		"vscode:prepublish": "npm run convertYaml"
 	},
 	"devDependencies": {
+		"@types/node": "^22.15.30",
+		"@types/vscode": "^1.100.0",
 		"fs-extra": "^11.2.0",
 		"js-yaml": "^4.1.0",
 		"prettier": "^3.3.3",
+		"typescript": "^5.8.3",
 		"vscode-tmgrammar-test": "^0.1.3",
 		"yaml-import": "^3.0.0"
 	},
