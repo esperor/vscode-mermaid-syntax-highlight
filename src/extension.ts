@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+import Formatter from './formatter';
 
 export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
@@ -7,8 +8,9 @@ export function activate(context: vscode.ExtensionContext) {
       {
         provideDocumentFormattingEdits(
           document: vscode.TextDocument,
+          options: vscode.FormattingOptions,
         ): vscode.TextEdit[] {
-          return [];
+          return new Formatter(context, options).format(document);
         },
       },
     ),
